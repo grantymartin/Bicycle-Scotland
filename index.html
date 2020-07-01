@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
-    <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 
@@ -131,12 +131,12 @@
             </div>
             <div class="row">
                 <form id="myform" class="form">
-                    <label class="form-label">Name</label>
-                    <input type="text" name="from_name" class="information" required/>
+                    <label class="your_label">Name</label>
+                    <input type="text" name="your_name" class="information" required/>
                     <label class="form-label">Email</label>
-                    <input type="text" name="from_email" class="information" required/>
+                    <input type="text" name="your_email" class="information" required/>
                     <label class="form-label">Any Further Question</label>
-                    <textarea rows="5" name="furtherquestion" class="information" required></textarea>
+                    <textarea rows="5" name="your_request" class="information" required></textarea>
                     <br>
                     <button class="form-button">Send</button>
                 </form>
@@ -152,10 +152,12 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="assets/js/main.js"></script>
-    <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
-    <script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
         (function() {
-            emailjs.init("user_aOXkO6zpybZx3E58jGjeI");
+            emailjs.init("user_cKxQr0do738PPnJR0Ll0d");
         })();
     </script>
 </body>

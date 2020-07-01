@@ -1,67 +1,65 @@
-$(document).ready(function () {
-    $(".north-1").click(function () {
+$(document).ready(function() {
+    $(".north-1").click(function() {
         $(".north").slideToggle("slow");
     });
 
-    $(".east-1").click(function () {
+    $(".east-1").click(function() {
         $(".east").slideToggle("slow");
     });
 
-    $(".south-1").click(function () {
+    $(".south-1").click(function() {
         $(".south").slideToggle("slow");
     });
 
-    $(".west-1").click(function () {
+    $(".west-1").click(function() {
         $(".west").slideToggle("slow");
     });
 
-    $(".central-1").click(function () {
+    $(".central-1").click(function() {
         $(".central").slideToggle("slow");
     });
-    
-    $(".about").click(function () {
+
+    $(".about").click(function() {
         $(".location").hide();
         $(".option").removeClass("red");
         $(".opener").show("slow");
     });
 
-    $(".option").click(function () {
+    $(".option").click(function() {
         $(this).toggleClass("red");
     });
 
-    $(".option").on("click", function () {
+    $(".option").on("click", function() {
         $(".opener").hide("slow");
     });
 
-    
-    
+
+    var template_params = {
+        "your_name": "your_name_value",
+        "your_email": "your_email_value",
+        "your_request": "your_request_value"
+    }
+
     var myform = $("form#myform");
-    myform.submit(function (event) {
+    myform.submit(function(event) {
         event.preventDefault();
-        
-        var params = myform.serializeArray().reduce(function (obj, item) {
-            obj[item.name] = item.value;
-            return obj;
-        }, {});
-        
+
+        // Change to your service ID, or keep using the default service
         var service_id = "default_service";
-        
-        var template_id = "Bicycle_Scotland";
+        var template_id = "bicycle_scotland";
+
         myform.find("button").text("Sending...");
-        emailjs.send(service_id, template_id, params)
-            .then(function () {
+        emailjs.sendForm(service_id, template_id, myform[0])
+            .then(function() {
                 alert("Sent!");
                 myform.find("button").text("Send");
-            }, function (err) {
+            }, function(err) {
                 alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
                 myform.find("button").text("Send");
             });
-            
         return false;
     });
-    
-    
-})
+});
 /*
 function initMap() {
         var map = new google.maps.Map(document.getElementById("map"), {
